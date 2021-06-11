@@ -7,14 +7,6 @@ import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import logger from 'redux-logger';
 
-ReactDOM.render(<Provider
- store={reduxStore}>
-     <App />
-     </Provider>, 
-    document.getElementById('root'));
-registerServiceWorker();
-
-
 
 
 reduxStore = createStore(
@@ -23,3 +15,10 @@ reduxStore = createStore(
     }),
     applyMiddleware(logger)
   ) 
+
+  ReactDOM.render(<Provider
+    store={reduxStore}>
+        <App />
+        </Provider>, 
+       document.getElementById('root'));
+   registerServiceWorker();
