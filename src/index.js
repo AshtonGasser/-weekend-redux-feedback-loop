@@ -6,12 +6,18 @@ import registerServiceWorker from './registerServiceWorker';
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import logger from 'redux-logger';
-
+const feedbackReducer = (state=[], action) => {
+    if ( action.type === 'SET_FEEDBACK' ) {
+      return action.payload
+    }
+    return state;
+  }
+  
 
 
 reduxStore = createStore(
     combineReducers({
-      
+      feedbackReducer
     }),
     applyMiddleware(logger)
   ) 

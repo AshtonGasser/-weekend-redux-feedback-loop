@@ -16,8 +16,31 @@ function FeedbackForm () {
     setMenu();
   }, []);
 
+  const handleNext = () => {
+ 
+    history.push('/customer')
+  }
+
+  //sends a dispatch to the menu reducer to set it to the present "pizza" table via an axios.GET
+  const getFeedback = () => {
+    axios
+      .get()
+      .then((response) => {
+        dispatch({
+          type: "SET_FEEDBACK",
+          payload: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log("error getting feedback", error);
+      });
+  };
+
+  return (
 
 
+
+  )
 
 
 
