@@ -3,7 +3,7 @@ import FeedbackReview from '../FeedbackReview/FeedbackReview'
 import { useDispatch } from "react-redux";
 
 function Submit(){
-    const dispatch = useDispatch()
+   // const dispatch = useDispatch()
     const submit = useSelector((store) => store.feedbackReducer)
 
     console.log('submit', submit);

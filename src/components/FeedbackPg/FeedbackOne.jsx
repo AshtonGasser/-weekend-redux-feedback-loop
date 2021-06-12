@@ -10,12 +10,13 @@ const history = useHistory()
     const dispatch = useDispatch()
    
     const handleNext = () => {
+        dispatch({
+            type: "ADD_FEELING",
+            payload: feeling
+        })
         history.push('/feedback2')
     }
-    dispatch({
-        type: "ADD_FEELING",
-        Payload: feeling
-    })
+    
 
     function handleFeedback(event) {
         event.preventDefault();
@@ -24,7 +25,7 @@ const history = useHistory()
         })
     }
         return(
-            <section onSubmit = {handleFeedback}>
+            <form onSubmit = {handleFeedback}>
               <h1>Feedback!</h1> 
               <h2>'How are you feeling today?'</h2>
                <input type = 'number'
@@ -35,7 +36,7 @@ const history = useHistory()
                require="required"
                placeholder ='1-5'></input>
                <button onClick ={handleNext}>Next</button>
-            </section>
+            </form>
         )
 
     }

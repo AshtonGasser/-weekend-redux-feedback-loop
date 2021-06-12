@@ -21,7 +21,7 @@ function App() {
     </div>
     <nav className="nav">
                
-         <Link to="/">Menu</Link>
+         <Link to="/">Form</Link>
       
          <Link to="/review">Feedback Review</Link>
          {/* <Link to="/info">Feedback Info</Link> */}

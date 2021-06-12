@@ -8,12 +8,13 @@ const history = useHistory()
     const dispatch = useDispatch()
    
     const handleNext = () => {
+       dispatch({
+        type: "ADD_UNDERSTANDING",
+        payload: understanding
+    }) 
         history.push('/feedback3')
     }
-    dispatch({
-        type: "ADD_UNDERSTANDING",
-        Payload: understanding
-    })
+    
 
     function handleFeedback(event) {
         event.preventDefault();

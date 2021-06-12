@@ -8,12 +8,13 @@ const history = useHistory()
     const dispatch = useDispatch()
    
     const handleNext = () => {
+        dispatch({
+        type: "ADD_SUPPORT",
+        payload: support
+    })
         history.push('/review')
     }
-    dispatch({
-        type: "ADD_SUPPORT",
-        Payload: support
-    })
+    
 
     function handleFeedback(event) {
         event.preventDefault();

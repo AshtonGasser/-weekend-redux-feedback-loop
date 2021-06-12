@@ -9,7 +9,7 @@ function FeedbackForm() {
   const dispatch = useDispatch();
   const feedback = useSelector((store) => store.feedbackReducer);
 
-  //get menu data from server on load
+  //get feedback data from server on load
   useEffect(() => {
     console.log("in useEffect");
     getFeedback();
@@ -19,13 +19,13 @@ function FeedbackForm() {
     history.push("/feedback1");
   };
 
-  //sends a dispatch to the menu reducer to set it to the present "pizza" table via an axios.GET
+  //sends a dispatch to the menu reducer to set it to the present 'reducer' table via an axios.GET
   const getFeedback = () => {
     axios
       .get()
       .then((response) => {
         dispatch({
-          type: "SET_FEEDBACK",
+          type: "SUBMIT",
           payload: response.data,
         });
       })
@@ -38,7 +38,7 @@ function FeedbackForm() {
     <div className="display">
       <button onClick={handleNext}>Next</button>
       {/* {feedback.map((list) => (
-        <FeedbackList key={list.id} list={list} />
+        <FeedbackAdmin key={list.id} list={list} />
       ))} */}
     </div>
   );
