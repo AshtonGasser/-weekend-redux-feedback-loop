@@ -1,4 +1,4 @@
-const  history = useHistory()
+
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import {useHistory} from "react-router-dom";
@@ -12,7 +12,7 @@ const history = useHistory()
         history.push('/feedback2')
     }
     dispatch({
-        type: "Add_FEEDBACK",
+        type: "ADD_FEEDBACK",
         Payload: feeling
     })
 

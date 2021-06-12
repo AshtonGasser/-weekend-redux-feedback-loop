@@ -6,8 +6,9 @@ import registerServiceWorker from './registerServiceWorker';
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import logger from 'redux-logger';
+
 const feedbackReducer = (state=[], action) => {
-    if ( action.type === 'SET_FEEDBACK' ) {
+    if ( action.type === 'ADD_FEEDBACK' ) {
       return action.payload
     }
     return state;
@@ -15,7 +16,7 @@ const feedbackReducer = (state=[], action) => {
   
 
 
-reduxStore = createStore(
+const store = createStore(
     combineReducers({
       feedbackReducer
     }),
@@ -23,7 +24,7 @@ reduxStore = createStore(
   ) 
 
   ReactDOM.render(<Provider
-    store={reduxStore}>
+    store={store}>
         <App />
         </Provider>, 
        document.getElementById('root'));

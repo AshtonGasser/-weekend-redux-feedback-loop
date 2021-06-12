@@ -3,7 +3,11 @@ import axios from 'axios';
 import {Route, HashRouter as Router, Link, usesHistory} from 'react-router-dom'
 import './App.css';
 import FeedbackForm from '../FeedbackForm/FeedbackForm'
-import FeedbackPg from '../FeedbackPg/FeedBackOne.jsx'
+import FeedbackOne from '../FeedbackPg/FeedbackOne.jsx'
+import FeedbackTwo from '../FeedbackPg/FeedbackTwo.jsx'
+import FeedbackThree from '../FeedbackPg/FeedbackThree.jsx'
+import FeedbackFour from '../FeedbackPg/FeedbackFour.jsx'
+import FeedbackFive from '../FeedbackPg/FeedbackFive.jsx'
 function App() {
 
   return (
@@ -39,13 +43,13 @@ function App() {
         <FeedbackFive/>
       </Route>
 
-      <Route path="/admin">
+      {/* <Route path="/admin">
         <FeedbackAdmin/>
       </Route>
 
       <Route path="/review">
         <FeedbackReview/>
-      </Route>
+      </Route> */}
 
     </div>
     </Router>

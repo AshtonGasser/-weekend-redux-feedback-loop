@@ -14,6 +14,22 @@ router.get('/', (req, res) => {
     });
 })
 
-module.exports = router;
+
 
 //Post 
+
+router.post('/',(req,res) => {
+    //sanitize , object model
+ Test = 'test'
+    // ---reduce info here
+pool.query(Test, ['test'])
+.then(result => {
+    res.sendStatus(201);
+}).catch(err => {
+    console.log(`oh no there is in ${err} in POST`);
+    res.sendStatus(201)
+})
+
+})
+
+module.exports = router;
