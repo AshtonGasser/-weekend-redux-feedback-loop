@@ -2,24 +2,22 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import "./feedbackForm.css";
 
+function FeedbackForm() {
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const feedback = useSelector((store) => store.feedbackReducer);
 
-function FeedbackForm () {
-    const history = useHistory();
-    const dispatch = useDispatch();
-    const menu = useSelector((store) => store.menuReducer);
-
-
-    //get menu data from server on load
+  //get menu data from server on load
   useEffect(() => {
     console.log("in useEffect");
     setMenu();
   }, []);
 
   const handleNext = () => {
- 
-    history.push('/customer')
-  }
+    history.push("/customer");
+  };
 
   //sends a dispatch to the menu reducer to set it to the present "pizza" table via an axios.GET
   const getFeedback = () => {
@@ -37,16 +35,13 @@ function FeedbackForm () {
   };
 
   return (
-
-
-
-  )
-
-
-
+    <div className="display">
+      <button onClick={handleNext}>Next</button>
+      {feedback.map((list) => (
+        <FeedbackList key={list.id} list={list} />
+      ))}
+    </div>
+  );
 }
 
-
-
-
-export default FeedbackForm
+export default FeedbackForm;
