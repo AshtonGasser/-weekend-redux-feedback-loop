@@ -8,8 +8,7 @@ import FeedbackReview from '../FeedbackReview/FeedbackReview.jsx'
 import FeedbackOne from '../FeedbackPg/FeedbackOne.jsx'
 import FeedbackTwo from '../FeedbackPg/FeedbackTwo.jsx'
 import FeedbackThree from '../FeedbackPg/FeedbackThree.jsx'
-import FeedbackFour from '../FeedbackPg/FeedbackFour.jsx'
-import FeedbackFive from '../FeedbackPg/FeedbackFive.jsx'
+import Submit from '../Submit/Submit.jsx'
 function App() {
 
   return (
@@ -46,12 +45,8 @@ function App() {
         <FeedbackThree/>
       </Route>
 
-      <Route path="/feedback4">
-        <FeedbackFour/>
-      </Route>
-
-      <Route path="/feedback5">
-        <FeedbackFive/>
+      <Route path="/submit">
+        <Submit/>
       </Route>
 
       <Route path="/review">

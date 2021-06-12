@@ -7,10 +7,10 @@ function FeedbackReview() {
 //variable for history
 const history = useHistory()
 //import data from store 
-  const reviewList = useSelector((store) => store.feedback.Reducer);
+  const reviewList = useSelector((store) => store.feedbackReducer);
   //const info = useSelector((store) => store.infoReducer);
   console.log("review", reviewList);
-}
+
 function handleFlagged(){
     console.log('handleFlagged');
 }
@@ -31,7 +31,7 @@ function handleFlagged(){
 //   });
 // }
 
-function postFeedback() {
+function postFeedback({reviewList}) {
   console.log("got to postFeedback", {reviewList});
   axios
     .post("/feedback", {reviewList})
@@ -59,7 +59,7 @@ return (
 
       
     </div>
-    <button onClick ={handleReview}>See Results</button>
+    <p>See Results</p>
     <div>
       <p>comments</p>
       <input type ='text' placeholder = 'comments'>{reviewList.comments}</input>
@@ -67,4 +67,5 @@ return (
     </div>
   </div>
 );
+}
 export default FeedbackReview;
