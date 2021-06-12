@@ -3,6 +3,7 @@ import axios from 'axios';
 import {Route, HashRouter as Router, Link, usesHistory} from 'react-router-dom'
 import './App.css';
 import FeedbackForm from '../FeedbackForm/FeedbackForm'
+import FeedbackReview from '../FeedbackReview/FeedbackReview.jsx'
 import FeedbackOne from '../FeedbackPg/FeedbackOne.jsx'
 import FeedbackTwo from '../FeedbackPg/FeedbackTwo.jsx'
 import FeedbackThree from '../FeedbackPg/FeedbackThree.jsx'
