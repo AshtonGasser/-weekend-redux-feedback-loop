@@ -25,12 +25,14 @@ const history = useHistory()
         return(
             <section onSubmit = {handleFeedback}>
               <h1>Feedback!</h1> 
+              <h2>'How are you feeling today?'</h2>
                <input type = 'number'
                min = {1}
                max ={5}  
                value={feeling}
                onChange={(event) => setFeeling(event.target.value)}
-               placeholder = 'How are you feeling today?'></input>
+               require={re}
+               placeholder ='1-5'></input>
                <button onClick ={handleNext}>Next</button>
             </section>
         )

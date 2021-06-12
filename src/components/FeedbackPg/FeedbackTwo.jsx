@@ -4,7 +4,7 @@ import {useHistory} from "react-router-dom";
     
 function FeedbackTwo() {
 const history = useHistory()
-    const [feeling, setFeeling] = useState('')
+    const [understanding, setUnderstanding] = useState('')
     const dispatch = useDispatch()
    
     const handleNext = () => {
@@ -12,24 +12,25 @@ const history = useHistory()
     }
     dispatch({
         type: "ADD_FEEDBACK",
-        Payload: feeling
+        Payload: understanding
     })
 
     function handleFeedback(event) {
         event.preventDefault();
         addFeedback({
-            feeling: feeling
+            understanding: understanding
         })
     }
         return(
             <section onSubmit = {handleFeedback}>
               <h1>Feedback!</h1> 
+              <h2>'How well are you understanding the content?'</h2>
                <input type = 'number'
                min = {1}
                max ={5}  
-               value={feeling}
-               onChange={(event) => setFeeling(event.target.value)}
-               placeholder = 'How well are you understanding the content?'></input>
+               value={understanding}
+               onChange={(event) => setUnderstanding(event.target.value)}
+               placeholder = '1-5'></input>
                <button onClick ={handleNext}>Next</button>
             </section>
         )

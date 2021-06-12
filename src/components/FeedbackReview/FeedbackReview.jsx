@@ -3,20 +3,22 @@ import axios from "axios";
 
 function FeedbackReview() {
   const review = useSelector((store) => store.feedback.Reducer);
-  const info = useSelector((store) => store.infoReducer);
+  //const info = useSelector((store) => store.infoReducer);
   console.log("review", review);
 }
-
+function handleFlagged(){
+    console.log('handleFlagged');
+}
 function handleReview() {
   console.log("got to handle review");
 
   postFeedback({
-    feeling: info[0].feeling,
-    understanding: info[0].understanding,
-    support: info[0].support,
-    comments: info[0].text,
+    feeling: review[0].feeling,
+    understanding: review[0].understanding,
+    support: review[0].support,
+    comments: review[0].text,
     flagged: handleFlagged(),
-    date: info[0].dated,
+    //date: review[0].dated,
   });
 }
 
@@ -38,11 +40,12 @@ return (
   <div>
     <div>
       <p> FeedBack Results</p>
-      <p>{info[0].feeling}</p>
-      <p>{info[0].understanding}</p>
-      <p>{info[0].support}</p>
-      <p>{info[0].text}</p>
+      <p>{review[0].feeling}</p>
+      <p>{review[0].understanding}</p>
+      <p>{review[0].support}</p>
+      <input type ='text' placeholder = 'comments'></input>
     </div>
+    <button onClick ={handleReview}>See Results</button>
     <div>
       <p>comments</p>
       <p>{info[0].text}</p>

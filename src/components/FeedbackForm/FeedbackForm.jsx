@@ -37,9 +37,9 @@ function FeedbackForm() {
   return (
     <div className="display">
       <button onClick={handleNext}>Next</button>
-      {feedback.map((list) => (
+      {/* {feedback.map((list) => (
         <FeedbackList key={list.id} list={list} />
-      ))}
+      ))} */}
     </div>
   );
 }

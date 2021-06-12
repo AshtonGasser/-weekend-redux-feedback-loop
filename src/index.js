@@ -8,13 +8,18 @@ import {Provider} from 'react-redux';
 import logger from 'redux-logger';
 
 const feedbackReducer = (state=[], action) => {
+  switch(action.type) {
+    case 'ADD_FEELING' : 
+   return {...state, feeling: action.payload};
+      
+  }
     if ( action.type === 'ADD_FEEDBACK' ) {
       return [...state, action.payload]
     }
     return state;
   }
   
-
+//everycase is a differnt feedback getting added
 
 const store = createStore(
     combineReducers({
