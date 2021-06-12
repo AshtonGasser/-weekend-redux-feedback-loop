@@ -4,6 +4,7 @@ import {Route, HashRouter as Router, Link, usesHistory} from 'react-router-dom'
 import './App.css';
 import FeedbackForm from '../FeedbackForm/FeedbackForm'
 import FeedbackReview from '../FeedbackReview/FeedbackReview.jsx'
+import FeedbackInfo from '../FeedBackInfo/FeedBackInfo.jsx'
 import FeedbackOne from '../FeedbackPg/FeedbackOne.jsx'
 import FeedbackTwo from '../FeedbackPg/FeedbackTwo.jsx'
 import FeedbackThree from '../FeedbackPg/FeedbackThree.jsx'
@@ -19,6 +20,14 @@ function App() {
         <h4>Don't forget it!</h4>
       </header>
     </div>
+    <nav className="nav">
+               
+         <Link to="/">Menu</Link>
+      
+         <Link to="/review">Feedback Review</Link>
+         <Link to="/info">Feedback Info</Link>
+         
+   </nav>
     <div>
       <Route path='/'exact>
         <FeedbackForm/>
@@ -45,6 +54,13 @@ function App() {
         <FeedbackFive/>
       </Route>
 
+      <Route path="/review">
+        <FeedbackReview/>
+      </Route>
+
+      <Route path="/info">
+        <FeedbackInfo/>
+      </Route>
       {/* <Route path="/admin">
         <FeedbackAdmin/>
       </Route>
