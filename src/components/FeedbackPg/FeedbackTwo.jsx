@@ -11,7 +11,7 @@ const history = useHistory()
         history.push('/feedback3')
     }
     dispatch({
-        type: "ADD_FEEDBACK",
+        type: "ADD_UNDERSTANDING",
         Payload: understanding
     })
 
@@ -29,6 +29,7 @@ const history = useHistory()
                min = {1}
                max ={5}  
                value={understanding}
+               require = 'required'
                onChange={(event) => setUnderstanding(event.target.value)}
                placeholder = '1-5'></input>
                <button onClick ={handleNext}>Next</button>

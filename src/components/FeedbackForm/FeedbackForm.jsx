@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "./feedbackForm.css";
-import FeedbackList from '../FeedbackList/FeedbackList.jsx'
+// import FeedbackList from '../FeedbackList/FeedbackList.jsx'
 function FeedbackForm() {
   const history = useHistory();
   const dispatch = useDispatch();

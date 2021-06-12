@@ -8,10 +8,10 @@ const history = useHistory()
     const dispatch = useDispatch()
    
     const handleNext = () => {
-        history.push('/feedback4')
+        history.push('/review')
     }
     dispatch({
-        type: "ADD_FEEDBACK",
+        type: "ADD_SUPPORT",
         Payload: support
     })
 
@@ -29,6 +29,7 @@ const history = useHistory()
                min = {1}
                max ={5}  
                value={support}
+               require ='required'
                onChange={(event) => setSupport(event.target.value)}
                 placeholder = 'support'>
             </input>

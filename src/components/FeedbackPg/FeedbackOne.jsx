@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import {useHistory} from "react-router-dom";
     
 function FeedbackOne() {
+    //variable for history
 const history = useHistory()
     const [feeling, setFeeling] = useState('')
     const dispatch = useDispatch()
@@ -12,7 +13,7 @@ const history = useHistory()
         history.push('/feedback2')
     }
     dispatch({
-        type: "ADD_FEEDBACK",
+        type: "ADD_FEELING",
         Payload: feeling
     })
 
@@ -31,7 +32,7 @@ const history = useHistory()
                max ={5}  
                value={feeling}
                onChange={(event) => setFeeling(event.target.value)}
-               require={re}
+               require="required"
                placeholder ='1-5'></input>
                <button onClick ={handleNext}>Next</button>
             </section>
