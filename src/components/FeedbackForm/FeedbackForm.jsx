@@ -22,12 +22,12 @@ function FeedbackForm() {
   //sends a dispatch to the menu reducer to set it to the present 'reducer' table via an axios.GET
   const getFeedback = () => {
     axios
-      .get()
+      .get('/feedback')
       .then((response) => {
-        dispatch({
+        /*dispatch({
           type: "SUBMIT",
           payload: response.data,
-        });
+        });*/
       })
       .catch((error) => {
         console.log("error getting feedback", error);

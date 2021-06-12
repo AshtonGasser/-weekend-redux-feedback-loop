@@ -2,9 +2,12 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { useState } from "react";
 
 function FeedbackReview() {
   //variable for history
+  const dispatch = useDispatch()
+  const [comment, setComment] = useState('')
   const history = useHistory();
   //import data from store
   const reviewList = useSelector((store) => store.feedbackReducer);
@@ -15,26 +18,17 @@ function FeedbackReview() {
     console.log("handleFlagged");
   }
 
-  // const handleNext = () => {
-  //     history.push('/review')
-  // }
-  // function handleReview() {
-  //   console.log("got to handle review");
 
-  //   postFeedback({
-  //     feeling: review[0].feeling,
-  //     understanding: review[0].understanding,
-  //     support: review[0].support,
-  //     comments: review[0].text,
-  //     flagged: handleFlagged(),
-  //     //date: review[0].dated,
-  //   });
-  // }
 
-  function postFeedback({ reviewList }) {
-    console.log("got to postFeedback", { reviewList });
+  function postFeedback() {
+    dispatch({
+      type: "ADD_COMMENT",
+      payload: comment
+    });
+
+    console.log("got to postFeedback", { ...reviewList });
     axios
-      .post("/feedback", { reviewList })
+      .post("/feedback", { ...reviewList, comment: comment })
       .then((response) => {
         console.log(response);
       })
@@ -58,9 +52,7 @@ function FeedbackReview() {
       <p>See Results</p>
       <div>
         <p>comments</p>
-        <input type="text" placeholder="comments">
-          {reviewList.comments}
-        </input>
+        <input type="text" placeholder="comments" onChange={(event) => setComment(event.target.value)}></input>
         <button onClick={postFeedback}>Submit</button>
       </div>
     </div>

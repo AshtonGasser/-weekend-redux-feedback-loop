@@ -10,13 +10,9 @@ import "./App.css";
 import FeedbackForm from "../FeedbackForm/FeedbackForm";
 import FeedbackReview from "../FeedbackReview/FeedbackReview.jsx";
 // import FeedbackInfo from '../FeedbackInfo/FeedbackInfo.jsx'
-import FeedbackInput from "../FeedbackPg/FeedbackInput.jsx";
+import FeedbackInput from "../FeedbackInput/FeedbackInput.jsx";
 import Submit from "../Submit/Submit.jsx";
-import { useDispatch } from "react-redux";
 function App() {
-  const dispatch = useDispatch();
-  const history = useHistory();
-
   return (
     <Router>
       <div className="App">
@@ -25,12 +21,13 @@ function App() {
           <h4>Don't forget it!</h4>
         </header>
       </div>
+
       <nav className="nav">
         <Link to="/">Form</Link>
-
         <Link to="/review">Feedback Review</Link>
         {/* <Link to="/info">Feedback Info</Link> */}
       </nav>
+
       <div>
         <Route path="/" exact>
           <FeedbackForm />
@@ -40,13 +37,8 @@ function App() {
           <FeedbackInput
             title="Feedback!"
             description="How are you feeling today?"
-            handleNext={(value) => {
-              dispatch({
-                type: "ADD_FEELING",
-                payload: value
-              });
-              history.push("/feedback2");
-            }}
+            action='ADD_FEELING'
+            route={'/feedback2'}
           />
         </Route>
 
@@ -54,13 +46,8 @@ function App() {
           <FeedbackInput
             title="Feedback!"
             description="How well are you understanding the content?"
-            handleNext={(value) => {
-              dispatch({
-                type: "ADD_UNDERSTANDING",
-                payload: value,
-              });
-              history.push("/feedback3");
-            }}
+            action='ADD_UNDERSTANDING'
+            route={'/feedback3'}
           />
         </Route>
 
@@ -68,13 +55,8 @@ function App() {
           <FeedbackInput
             title="Feedback!"
             description="How well are you being supported?"
-            handleNext={(value) => {
-              dispatch({
-                type: "ADD_SUPPORT",
-                payload: value,
-              });
-              history.push("/review");
-            }}
+            action='ADD_SUPPORT'
+            route={'/review'}
           />
         </Route>
 

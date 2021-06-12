@@ -4,7 +4,7 @@ const pool = require("../modules/pool");
 
 // GET Route⬇
 router.get("/", (req, res) => {
-  console.log("GET /feedback");
+  console.log("Got to /feedback");
   pool
     .query('SELECT * FROM "feedback";')
     .then((result) => {
@@ -20,21 +20,22 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   //sanitize , object model
-  const { feeling, understanding, support, comments } = req.body;
+  const { feeling, understanding, support, comment } = req.body;
   // ---reduce info here
   const queryText = `
 INSERT INTO "feedback" (feeling, understanding, support, comments)
 VALUES ($1, $2, $3, $4);
 `;
-  const values = [feeling, understanding, support, comments];
+  const values = [feeling, understanding, support, comment];
   pool
     .query(queryText, values)
     .then((result) => {
+        console.log(result);
       res.sendStatus(201);
     })
     .catch((err) => {
       console.log(`oh no there is in ${err} in POST`);
-      res.sendStatus(201);
+      res.sendStatus(500);
     });
 });
 
