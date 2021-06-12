@@ -12,11 +12,11 @@ function FeedbackForm() {
   //get menu data from server on load
   useEffect(() => {
     console.log("in useEffect");
-    setMenu();
+    getFeedback();
   }, []);
 
   const handleNext = () => {
-    history.push("/customer");
+    history.push("/feedback1");
   };
 
   //sends a dispatch to the menu reducer to set it to the present "pizza" table via an axios.GET
