@@ -28,6 +28,7 @@ function App() {
       </Route>
 
       <Route path="/feedback2">
+        <h1>hello</h1>
         <FeedbackTwo/>
       </Route>
 

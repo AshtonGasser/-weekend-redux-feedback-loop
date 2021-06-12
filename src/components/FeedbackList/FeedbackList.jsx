@@ -3,10 +3,12 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 
-function feedbackList({list}){
+function FeedbackList({list}){
 const dispatch = useDispatch()
 
 }
 
 
-export default feedbackList
+export default 
+
+FeedbackList
