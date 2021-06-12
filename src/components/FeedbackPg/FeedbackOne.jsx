@@ -20,7 +20,7 @@ const history = useHistory()
 
     function handleFeedback(event) {
         event.preventDefault();
-        addFeedback({
+        setFeeling({
             feeling: feeling
         })
     }
