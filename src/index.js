@@ -25,7 +25,7 @@ const feedbackReducer = (state = {}, action) => {
   }
 }; // end feedback reducer
 
-//everycase is a different feedback getting added
+//every case is a different feedback getting added
 
 const store = createStore(
   combineReducers({

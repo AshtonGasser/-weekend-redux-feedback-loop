@@ -33,11 +33,11 @@ function FeedbackForm() {
         console.log("error getting feedback", error);
       });
   };
-
+//for each item from database make a row 
   return (
     <div className="display">
       <button onClick={handleNext}>Next</button>
-      {/* {feedback.map((list) => (
+      {/* {feedback.map <tr>((list) => (
         <FeedbackAdmin key={list.id} list={list} />
       ))} */}
     </div>

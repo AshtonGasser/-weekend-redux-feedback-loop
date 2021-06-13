@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import {
   Route,
   HashRouter as Router,
@@ -9,7 +8,6 @@ import {
 import "./App.css";
 import FeedbackForm from "../FeedbackForm/FeedbackForm";
 import FeedbackReview from "../FeedbackReview/FeedbackReview.jsx";
-// import FeedbackInfo from '../FeedbackInfo/FeedbackInfo.jsx'
 import FeedbackInput from "../FeedbackInput/FeedbackInput.jsx";
 import Submit from "../Submit/Submit.jsx";
 function App() {
@@ -25,9 +23,8 @@ function App() {
       <nav className="nav">
         <Link to="/">Form</Link>
         <Link to="/review">Feedback Review</Link>
-        {/* <Link to="/info">Feedback Info</Link> */}
       </nav>
-
+{/* routes */}
       <div>
         <Route path="/" exact>
           <FeedbackForm />

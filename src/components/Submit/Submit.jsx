@@ -5,11 +5,9 @@ import { useHistory } from "react-router-dom";
 
 function Submit(){
    //const dispatch = useDispatch()
-    //const submit = useSelector((store) => store.feedbackReducer)
-
-   //console.log('submit', submit);
+  
+    //variable for history⬇
     const history = useHistory();
-    //import data from store
     const reviewList = useSelector((store) => store.feedbackReducer);
     //const info = useSelector((store) => store.infoReducer);
     console.log("review", reviewList);
@@ -34,7 +32,7 @@ function Submit(){
             <h3>{reviewList.comment}</h3>
             </div>
             <div>
-            <button onClick={handleNext}>Submit</button>
+            <button onClick={handleNext}>Home</button>
           </div>
         </div>
       );

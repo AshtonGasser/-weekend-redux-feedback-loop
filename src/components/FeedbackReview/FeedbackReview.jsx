@@ -5,13 +5,11 @@ import { useHistory } from "react-router-dom";
 import { useState } from "react";
 
 function FeedbackReview() {
-  //variable for history
   const dispatch = useDispatch()
   const [comment, setComment] = useState('')
+   //variable for history⬇
   const history = useHistory();
-  //import data from store
   const reviewList = useSelector((store) => store.feedbackReducer);
-  //const info = useSelector((store) => store.infoReducer);
   console.log("review", reviewList);
 
   function handleFlagged() {
