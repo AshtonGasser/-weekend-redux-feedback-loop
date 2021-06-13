@@ -31,7 +31,7 @@ function Submit() {
         <h3>{reviewList.comment}</h3>
       </div>
       <div>
-        <button onClick={handleNext}>Home</button>
+        <button onClick={handleNext}>Leave New Feedback</button>
       </div>
     </div>
   );
