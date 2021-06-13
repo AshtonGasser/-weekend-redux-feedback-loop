@@ -1,3 +1,5 @@
 .display{
-    display:flexbox;
+    
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
 }
