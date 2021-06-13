@@ -1,43 +1,40 @@
 import { useSelector } from "react-redux";
-import FeedbackReview from '../FeedbackReview/FeedbackReview'
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-function Submit(){
-   //const dispatch = useDispatch()
-  
-    //variable for history⬇
-    const history = useHistory();
-    const reviewList = useSelector((store) => store.feedbackReducer);
-    //const info = useSelector((store) => store.infoReducer);
-    console.log("review", reviewList);
+function Submit() {
+  //const dispatch = useDispatch()
 
-    const handleNext = () => {
-        history.push("/");
-      };
+  //variable for history⬇
+  const history = useHistory();
+  const reviewList = useSelector((store) => store.feedbackReducer);
+  //const info = useSelector((store) => store.infoReducer);
+  console.log("review", reviewList);
 
-    return (
-        <div>
-          <div>
-            <h1> FeedBack Review</h1>
-          </div>
-          <div>
-            <p>Feelings: {reviewList.feeling}</p>
-            <p>Understanding: {reviewList.understanding}</p>
-            <p>Support: {reviewList.support}</p>
-          </div>
-          <p>See Results</p>
-          <div>
-            <p>comments</p>
-            <h3>{reviewList.comment}</h3>
-            </div>
-            <div>
-            <button onClick={handleNext}>Home</button>
-          </div>
-        </div>
-      );
+  const handleNext = () => {
+    history.push("/");
+  };
 
+  return (
+    <div>
+      <div>
+        <h1> FeedBack Review</h1>
+      </div>
+      <div>
+        <p>Feelings: {reviewList.feeling}</p>
+        <p>Understanding: {reviewList.understanding}</p>
+        <p>Support: {reviewList.support}</p>
+      </div>
+      <p>See Results</p>
+      <div>
+        <p>comments</p>
+        <h3>{reviewList.comment}</h3>
+      </div>
+      <div>
+        <button onClick={handleNext}>Home</button>
+      </div>
+    </div>
+  );
+}
 
- }
-
-export default Submit
+export default Submit;

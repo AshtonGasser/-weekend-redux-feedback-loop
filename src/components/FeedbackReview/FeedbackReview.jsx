@@ -5,9 +5,9 @@ import { useHistory } from "react-router-dom";
 import { useState } from "react";
 
 function FeedbackReview() {
-  const dispatch = useDispatch()
-  const [comment, setComment] = useState('')
-   //variable for history⬇
+  const dispatch = useDispatch();
+  const [comment, setComment] = useState("");
+  //variable for history⬇
   const history = useHistory();
   const reviewList = useSelector((store) => store.feedbackReducer);
   console.log("review", reviewList);
@@ -16,12 +16,10 @@ function FeedbackReview() {
     console.log("handleFlagged");
   }
 
-
-
   function postFeedback() {
     dispatch({
       type: "ADD_COMMENT",
-      payload: comment
+      payload: comment,
     });
 
     console.log("got to postFeedback", { ...reviewList });
@@ -50,7 +48,11 @@ function FeedbackReview() {
       <p>See Results</p>
       <div>
         <p>comments</p>
-        <input type="text" placeholder="comments" onChange={(event) => setComment(event.target.value)}></input>
+        <input
+          type="text"
+          placeholder="comments"
+          onChange={(event) => setComment(event.target.value)}
+        ></input>
         <button onClick={postFeedback}>Submit</button>
       </div>
     </div>

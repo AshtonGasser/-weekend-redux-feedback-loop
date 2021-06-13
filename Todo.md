@@ -19,3 +19,8 @@
             [  ] React.StrictMode?
             [  ] Wrap the app in a <Provider> and give the provider a store -> <Provider store={store}>
             [ ] Service Worker?
+
+            []update readme
+            [] add more comments
+            [] style style style
+            [] finish up stretch goals
