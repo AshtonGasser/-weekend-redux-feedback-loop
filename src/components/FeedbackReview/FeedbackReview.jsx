@@ -3,7 +3,8 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
-
+import 'fontsource-roboto';
+import './FeedbackReview.css'
 function FeedbackReview() {
   const dispatch = useDispatch();
   const [comment, setComment] = useState("");
@@ -15,6 +16,7 @@ function FeedbackReview() {
   function handleFlagged() {
     console.log("handleFlagged");
   }
+// post 
 
   function postFeedback() {
     dispatch({
@@ -36,7 +38,7 @@ function FeedbackReview() {
   //onclick change to submit route
 
   return (
-    <div>
+    <div className = 'display'>
       <div>
         <h1> FeedBack Review</h1>
       </div>
@@ -53,7 +55,7 @@ function FeedbackReview() {
           placeholder="comments"
           onChange={(event) => setComment(event.target.value)}
         ></input>
-        <button onClick={postFeedback}>Submit</button>
+        <button onClick={postFeedback}>See Results</button>
       </div>
     </div>
   );

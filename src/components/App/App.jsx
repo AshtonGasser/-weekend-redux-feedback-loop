@@ -20,10 +20,7 @@ function App() {
         </header>
       </div>
 
-      <nav className="nav">
-        <Link to="/">Form</Link>
-        <Link to="/review">Feedback Review</Link>
-      </nav>
+      
 {/* routes */}
       <div>
         <Route path="/" exact>

@@ -1,8 +1,8 @@
-
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-
+import 'fontsource-roboto';
+import './FeedbackInput.css'
 const FeedbackInput = ({ title, description, action, route }) => {
     const history = useHistory();
     const dispatch = useDispatch();
@@ -18,7 +18,7 @@ const FeedbackInput = ({ title, description, action, route }) => {
     }
 
     return(
-        <form onSubmit={submit}>
+        <form className = 'display' onSubmit={submit}>
             <h1>{title}</h1> 
             <h3>{description}</h3>
             <input 
