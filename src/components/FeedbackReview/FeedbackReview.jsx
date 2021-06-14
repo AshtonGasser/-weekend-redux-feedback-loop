@@ -34,7 +34,9 @@ function FeedbackReview() {
         console.log(`Oh no there is an ${error} in postFeedback`);
       });
     history.push("/submit");
+    //end post
   }
+
   //onclick change to submit route
 
   return (

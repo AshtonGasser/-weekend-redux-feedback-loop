@@ -7,6 +7,7 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import logger from "redux-logger";
 
+//every case is a different feedback getting added
 const feedbackReducer = (state = {}, action) => {
   switch (action.type) {
     case "ADD_FEELING":
@@ -23,9 +24,9 @@ const feedbackReducer = (state = {}, action) => {
     default:
       return state;
   }
-}; // end feedback reducer
+}; // end feedbackReducer
 
-//every case is a different feedback getting added
+
 
 const store = createStore(
   combineReducers({
